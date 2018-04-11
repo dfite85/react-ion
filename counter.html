@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Welcome to Bloc</title>
+  </head>
+  <body>
+
+    <div id="app"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.0/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.34/browser.min.js"></script>>
+
+    <script type="text/babel">
+      class Counter extends React.Component {
+          constructor(props){
+           super(props);
+           this.state = {
+             string: "Reggio"
+           }
+         }
+          
+        render() {
+          return (
+            <div>
+              
+              <h2>Favorite Place: {this.props.label}</h2>
+                  <h3>Current Favorite: {this.state.string}</h3>
+              <p>Current Date: {this.props.date.toLocaleDateString()}</p>
+            </div>
+          );
+        }
+      }
+      const info = {
+        date: new Date(),
+        
+      }
+      Counter.defaultProps = {
+        label: "Anywhere Fishing"
+      }
+      ReactDOM.render(
+        <Counter
+          date={info.date}
+          image={info.image}/>,document.getElementById('app')
+      );
+    </script>
+  </body>
+</html>
